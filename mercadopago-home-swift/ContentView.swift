@@ -8,14 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var navProgrammaticHome = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(spacing: 20) {
+                Image("mp-main-logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 150)
+                
+                Button(action: {
+                    print("UIKit Storyboard")
+                }) {
+                    Text("UIKit Storyboard")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
+                Button(action: {
+                    navProgrammaticHome = true
+                }) {
+                    Text("UIKit Programmatically")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                
+                Button(action: {
+                    print("SwiftUI")
+                }) {
+                    Text("SwiftUI")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+            }
+            .padding()
+            .navigationDestination(isPresented: $navProgrammaticHome) {
+                ProgrammaticHomeViewControllerWrapper()
+                    .navigationBarHidden(true)
+                    .edgesIgnoringSafeArea(.all)
+                    .statusBarHidden(true)
+            }
         }
-        .padding()
     }
 }
 
