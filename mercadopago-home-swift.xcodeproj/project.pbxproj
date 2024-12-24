@@ -6,17 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		1B3B12E62D1AEC5B00B358F4 /* NoyhR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3B12E42D1AEC5B00B358F4 /* NoyhR-Bold.ttf */; };
-		1B3B12E72D1AEC5B00B358F4 /* NoyhR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B3B12E52D1AEC5B00B358F4 /* NoyhR-Medium.ttf */; };
-		1BA6F5142D1A0A4000FC3F3C /* NoyhR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA6F5132D1A0A4000FC3F3C /* NoyhR-Regular.ttf */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		1B3B12E42D1AEC5B00B358F4 /* NoyhR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NoyhR-Bold.ttf"; sourceTree = "<group>"; };
-		1B3B12E52D1AEC5B00B358F4 /* NoyhR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NoyhR-Medium.ttf"; sourceTree = "<group>"; };
 		1BA6F4E92D1A073A00FC3F3C /* mercadopago-home-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mercadopago-home-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BA6F5132D1A0A4000FC3F3C /* NoyhR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NoyhR-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -56,9 +47,6 @@
 			children = (
 				1BA6F4EB2D1A073A00FC3F3C /* mercadopago-home-swift */,
 				1BA6F4EA2D1A073A00FC3F3C /* Products */,
-				1BA6F5132D1A0A4000FC3F3C /* NoyhR-Regular.ttf */,
-				1B3B12E42D1AEC5B00B358F4 /* NoyhR-Bold.ttf */,
-				1B3B12E52D1AEC5B00B358F4 /* NoyhR-Medium.ttf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3B12E62D1AEC5B00B358F4 /* NoyhR-Bold.ttf in Resources */,
-				1B3B12E72D1AEC5B00B358F4 /* NoyhR-Medium.ttf in Resources */,
-				1BA6F5142D1A0A4000FC3F3C /* NoyhR-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
