@@ -202,7 +202,6 @@ class TransferBlockPrView: UIView {
         
         transferOptions.forEach { option in
             let view = TransferOptionPrView(icon: option.icon, title: option.title)
-            
             optionsStackView.addArrangedSubview(view)
         }
     }
@@ -220,11 +219,11 @@ class TransferBlockPrView: UIView {
     }()
     //CREDIT CARD
     
-    required init(){
+    required init() {
         super.init(frame: CGRect.zero)
         self.applyStyle()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -244,7 +243,7 @@ class TransferBlockPrView: UIView {
         self.addSubview(optionsStackView)
         
         self.addSubview(creditCardView)
-
+        
         NSLayoutConstraint.activate([
             availableLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
             availableLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
@@ -270,7 +269,7 @@ class TransferBlockPrView: UIView {
             creditCardView.topAnchor.constraint(equalTo: optionsStackView.bottomAnchor, constant: 16),
             creditCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
             creditCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            creditCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            creditCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
         ])
     }
     

@@ -8,16 +8,6 @@
 import UIKit
 import SwiftUI
 
-//
-//  ProgrammaticHomeViewController.swift
-//  mercadopago-swift
-//
-//  Created by Andres Rechimon on 23/12/2024.
-//
-
-import UIKit
-import SwiftUI
-
 struct ProgrammaticHomeViewControllerWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> ProgrammaticHomeViewController {
         return ProgrammaticHomeViewController()
@@ -50,9 +40,49 @@ class ProgrammaticHomeViewController: UIViewController {
         return view
     }()
     
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.backgroundColor = .clear
+        scroll.showsVerticalScrollIndicator = false
+        
+        return scroll
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 16
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
     private lazy var transferBlockView: TransferBlockPrView = {
         let view = TransferBlockPrView()
-        
+        return view
+    }()
+    
+    private lazy var redView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        return view
+    }()
+    
+    private lazy var blueView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .blue
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        return view
+    }()
+    
+    private lazy var greenView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
         return view
     }()
     
@@ -62,6 +92,7 @@ class ProgrammaticHomeViewController: UIViewController {
         
         setupGradient()
         setupView()
+        setupScrollContent()
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,7 +104,7 @@ class ProgrammaticHomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -81,17 +112,32 @@ class ProgrammaticHomeViewController: UIViewController {
     
     private func setupView() {
         view.addSubview(headerView)
-        view.addSubview(transferBlockView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
-            transferBlockView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 8),
-            transferBlockView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            transferBlockView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 8),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32)
         ])
+    }
+    
+    private func setupScrollContent() {
+        stackView.addArrangedSubview(transferBlockView)
+        stackView.addArrangedSubview(redView)
+        stackView.addArrangedSubview(blueView)
+        stackView.addArrangedSubview(greenView)
     }
     
     private func setupGradient() {
