@@ -17,6 +17,16 @@ struct ProgrammaticHomeViewControllerWrapper: UIViewControllerRepresentable {
 }
 
 class ProgrammaticHomeViewController: UIViewController {
+    private let viewModel: ProgrammaticHomeViewModel = ProgrammaticHomeViewModel()
+    
+    private lazy var layout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        
+        return layout
+    }()
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
@@ -51,7 +61,7 @@ class ProgrammaticHomeViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 24
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -67,6 +77,24 @@ class ProgrammaticHomeViewController: UIViewController {
         
         return view
     }()
+    
+    //OFFERS CAROUSEL
+    private lazy var offersCarouselCollectionView: UICollectionView = {
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        collection.backgroundColor = .clear
+        collection.dataSource = self
+        collection.delegate = self
+        collection.showsHorizontalScrollIndicator = false
+        collection.register(OfferCarouselCollectionViewCell.self, forCellWithReuseIdentifier: "OfferCarouselCollectionViewCell")
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collection.heightAnchor.constraint(equalToConstant: 90)
+        ])
+        
+        return collection
+    }()
+    //OFFERS CAROUSEL
     
     private lazy var redView: UIView = {
         let view = UIView()
@@ -142,6 +170,7 @@ class ProgrammaticHomeViewController: UIViewController {
     private func setupScrollContent() {
         stackView.addArrangedSubview(transferBlockView)
         stackView.addArrangedSubview(servicesBlockView)
+        stackView.addArrangedSubview(offersCarouselCollectionView)
         stackView.addArrangedSubview(redView)
         stackView.addArrangedSubview(blueView)
         stackView.addArrangedSubview(greenView)
@@ -159,5 +188,27 @@ extension ProgrammaticHomeViewController: HeaderPrViewDelegate {
         } else {
             dismiss(animated: true)
         }
+    }
+}
+
+extension ProgrammaticHomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.offers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: OfferCarouselCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OfferCarouselCollectionViewCell", for: indexPath) as? OfferCarouselCollectionViewCell else { fatalError() }
+        
+        cell.setup(item: viewModel.offers[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: offersCarouselCollectionView.frame.width - 32, height: 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets (top: 0, left: 16, bottom: 0, right: 16)
     }
 }
