@@ -59,6 +59,37 @@ class ServicesOptionPrView: UIView {
         return label
     }()
     
+    private lazy var badgeTextLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = .noyhRegular(size: 10)
+        label.textAlignment = .center
+        label.numberOfLines = .zero
+        label.text = "HASTA 50% OFF"
+        
+        return label
+    }()
+    
+    private lazy var badgeContainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .greenOffer
+        view.layer.cornerRadius = 6
+        view.clipsToBounds = true
+        
+        view.addSubview(badgeTextLabel)
+        
+        NSLayoutConstraint.activate([
+            badgeTextLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 2),
+            badgeTextLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -2),
+            badgeTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
+            badgeTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4),
+        ])
+        
+        return view
+    }()
+    
     required init(icon: String, title: String, color: UIColor){
         self.icon = icon
         self.title = title
@@ -77,11 +108,15 @@ class ServicesOptionPrView: UIView {
         self.addSubview(optionContainerView)
         self.addSubview(optionIconView)
         self.addSubview(titleLabel)
+        self.addSubview(badgeContainerView)
         
         NSLayoutConstraint.activate([
             optionContainerView.topAnchor.constraint(equalTo: self.topAnchor),
             optionContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             optionContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            badgeContainerView.centerXAnchor.constraint(equalTo: optionContainerView.centerXAnchor),
+            badgeContainerView.bottomAnchor.constraint(equalTo: optionContainerView.bottomAnchor, constant: 10),
             
             optionIconView.centerXAnchor.constraint(equalTo: optionContainerView.centerXAnchor),
             optionIconView.centerYAnchor.constraint(equalTo: optionContainerView.centerYAnchor),
