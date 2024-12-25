@@ -19,7 +19,7 @@ class TransferBlockPrView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = .noyhMedium(size: 16)
-        label.text = "Disponible"
+        label.text = NSLocalizedString("available")
         
         return label
     }()
@@ -80,7 +80,7 @@ class TransferBlockPrView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = .noyhMedium(size: 16)
         button.setTitleColor(.lightBlueEmptyButton, for: .normal)
-        button.setTitle(NSLocalizedString("Ir a movimientos", comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString("go_to_moves"), for: .normal)
         
         let symbolConfig = UIImage.SymbolConfiguration(
             pointSize: 12,
@@ -194,14 +194,14 @@ class TransferBlockPrView: UIView {
     
     private func setupOptionsView() {
         let transferOptions: [TransferOption] = [
-            TransferOption(icon: "arrow.up.circle", title: "Ingresar"),
-            TransferOption(icon: "arrow.right.circle", title: "Transferir"),
-            TransferOption(icon: "arrow.down.circle", title: "Sacar"),
-            TransferOption(icon: "person.text.rectangle", title: "Tu CVU")
+            TransferOption(icon: "arrow.up.circle", title: NSLocalizedString("deposit")),
+            TransferOption(icon: "arrow.right.circle", title: NSLocalizedString("transfer")),
+            TransferOption(icon: "arrow.down.circle", title: NSLocalizedString("withdraw")),
+            TransferOption(icon: "person.text.rectangle", title: NSLocalizedString("your_cvu"))
         ]
         
         transferOptions.forEach { option in
-            let view = TransferOptionView(icon: option.icon, title: option.title)
+            let view = TransferOptionPrView(icon: option.icon, title: option.title)
             
             optionsStackView.addArrangedSubview(view)
         }
@@ -209,8 +209,8 @@ class TransferBlockPrView: UIView {
     //OPTIONS
     
     //CREDIT CARD
-    private lazy var creditCardView: CreditCardView = {
-        let view = CreditCardView()
+    private lazy var creditCardView: CreditCardPrView = {
+        let view = CreditCardPrView()
         
         NSLayoutConstraint.activate([
             view.heightAnchor.constraint(equalToConstant: 85)
@@ -275,8 +275,8 @@ class TransferBlockPrView: UIView {
     }
     
     private func applyContainerStyles() {
-        #warning("aplicar sombra")
         self.backgroundColor = .white
         self.layer.cornerRadius = 4
+        self.applyShadow()
     }
 }

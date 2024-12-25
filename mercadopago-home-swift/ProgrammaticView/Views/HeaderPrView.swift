@@ -55,7 +55,7 @@ class HeaderPrView: UIView {
         label.textColor = .white
         label.numberOfLines = .zero
         label.font = .noyhRegular(size: 20)
-        label.text = "Hola, \(self.getName())"
+        label.text = NSLocalizedString("hello_home", text: self.getName())
         
         return label
     }()
@@ -99,7 +99,7 @@ class HeaderPrView: UIView {
         button.backgroundColor = .lightBlueButton
         button.layer.cornerRadius = 6
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        button.setTitle(" Ayuda", for: .normal)
+        button.setTitle(NSLocalizedString("help"), for: .normal)
         
         return button
     }()

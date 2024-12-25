@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  mercadopago-home-swift
+
+  Created by Andres Rechimon on 25/12/2024.
+  
+*/
+"hello_home" = "Hola, %@";
+"help" = " Ayuda";
+"available" = "Disponible";
+"go_to_moves" = "Ir a movimientos";
+"deposit" = "Ingresar";
+"transfer" = "Transferir";
+"withdraw" = "Sacar";
+"your_cvu" = "Tu CVU";
+"mp_card" = "Tarjeta Mercado Pago";

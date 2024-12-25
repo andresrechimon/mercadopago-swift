@@ -1,5 +1,5 @@
 //
-//  TransferOptionView.swift
+//  TransferOptionPrView.swift
 //  mercadopago-home-swift
 //
 //  Created by Andres Rechimon on 24/12/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransferOptionView: UIView {
+class TransferOptionPrView: UIView {
     private var icon: String
     private var title: String
     
