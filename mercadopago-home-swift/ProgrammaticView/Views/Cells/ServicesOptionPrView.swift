@@ -11,6 +11,7 @@ class ServicesOptionPrView: UIView {
     private var icon: String
     private var title: String
     private var color: UIColor
+    private var serviceOffer: String
     
     private lazy var optionContainerView: UIView = {
         let view = UIView()
@@ -63,10 +64,10 @@ class ServicesOptionPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
-        label.font = .noyhRegular(size: 10)
+        label.font = .noyhMedium(size: 10)
         label.textAlignment = .center
         label.numberOfLines = .zero
-        label.text = "HASTA 50% OFF"
+        label.text = self.serviceOffer.uppercased()
         
         return label
     }()
@@ -77,6 +78,7 @@ class ServicesOptionPrView: UIView {
         view.backgroundColor = .greenOffer
         view.layer.cornerRadius = 6
         view.clipsToBounds = true
+        view.isHidden = self.serviceOffer.isEmpty
         
         view.addSubview(badgeTextLabel)
         
@@ -90,10 +92,11 @@ class ServicesOptionPrView: UIView {
         return view
     }()
     
-    required init(icon: String, title: String, color: UIColor){
+    required init(icon: String, title: String, color: UIColor, serviceOffer: String){
         self.icon = icon
         self.title = title
         self.color = color
+        self.serviceOffer = serviceOffer
         super.init(frame: CGRect.zero)
         self.applyStyle()
     }
