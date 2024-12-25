@@ -14,6 +14,14 @@ struct TransferOption {
 
 class TransferBlockPrView: UIView {
     
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        
+        return view
+    }()
+    
     private lazy var availableLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -232,30 +240,30 @@ class TransferBlockPrView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.applyContainerStyles()
         
-        self.addSubview(availableLabel)
-        self.addSubview(remunerationContainerView)
-        self.addSubview(movesButton)
-        self.addSubview(moneyLabel)
-        self.addSubview(eyeContainerView)
-        self.addSubview(eyeImageView)
+        containerView.addSubview(availableLabel)
+        containerView.addSubview(remunerationContainerView)
+        containerView.addSubview(movesButton)
+        containerView.addSubview(moneyLabel)
+        containerView.addSubview(eyeContainerView)
+        containerView.addSubview(eyeImageView)
         
         self.setupOptionsView()
-        self.addSubview(optionsStackView)
+        containerView.addSubview(optionsStackView)
         
-        self.addSubview(creditCardView)
+        containerView.addSubview(creditCardView)
         
         NSLayoutConstraint.activate([
-            availableLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
-            availableLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            availableLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            availableLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             
             remunerationContainerView.leadingAnchor.constraint(equalTo: availableLabel.trailingAnchor, constant: 8),
             remunerationContainerView.centerYAnchor.constraint(equalTo: availableLabel.centerYAnchor),
             
-            movesButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
-            movesButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            movesButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            movesButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             
             moneyLabel.topAnchor.constraint(equalTo: availableLabel.bottomAnchor, constant: 4),
-            moneyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            moneyLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             
             eyeContainerView.leadingAnchor.constraint(equalTo: moneyLabel.trailingAnchor, constant: 8),
             eyeContainerView.centerYAnchor.constraint(equalTo: moneyLabel.centerYAnchor),
@@ -263,19 +271,28 @@ class TransferBlockPrView: UIView {
             eyeImageView.centerXAnchor.constraint(equalTo: eyeContainerView.centerXAnchor),
             
             optionsStackView.topAnchor.constraint(equalTo: moneyLabel.bottomAnchor, constant: 12),
-            optionsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            optionsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            optionsStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            optionsStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             
             creditCardView.topAnchor.constraint(equalTo: optionsStackView.bottomAnchor, constant: 16),
-            creditCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            creditCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            creditCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+            creditCardView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+            creditCardView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            creditCardView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16)
         ])
     }
     
     private func applyContainerStyles() {
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 4
-        self.applyShadow()
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 4
+        containerView.applyShadow()
+        
+        self.addSubview(containerView)
+        
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: self.topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+        ])
     }
 }
