@@ -123,7 +123,7 @@ class TransferBlockPrView: UIView {
         let pesosSymbol = NSAttributedString(
             string: "$ ",
             attributes: [
-                .font: UIFont.noyhBold(size: 32),
+                .font: UIFont.noyhBold(size: 36),
                 .foregroundColor: UIColor.black
             ]
         )
@@ -132,7 +132,7 @@ class TransferBlockPrView: UIView {
         let wholeNumberString = NSAttributedString(
             string: wholeNumber,
             attributes: [
-                .font: UIFont.noyhBold(size: 32),
+                .font: UIFont.noyhBold(size: 36),
                 .foregroundColor: UIColor.black
             ]
         )
@@ -145,7 +145,7 @@ class TransferBlockPrView: UIView {
             attributes: [
                 .font: UIFont.noyhRegular(size: 16),
                 .foregroundColor: UIColor.black,
-                .baselineOffset: 10
+                .baselineOffset: 13
             ]
         )
         attributedString.append(decimalsString)
