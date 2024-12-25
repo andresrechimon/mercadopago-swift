@@ -58,6 +58,13 @@ class ProgrammaticHomeViewController: UIViewController {
     
     private lazy var transferBlockView: TransferBlockPrView = {
         let view = TransferBlockPrView()
+        
+        return view
+    }()
+    
+    private lazy var servicesBlockView: ServicesBlockPrView = {
+        let view = ServicesBlockPrView()
+        
         return view
     }()
     
@@ -134,6 +141,7 @@ class ProgrammaticHomeViewController: UIViewController {
     
     private func setupScrollContent() {
         stackView.addArrangedSubview(transferBlockView)
+        stackView.addArrangedSubview(servicesBlockView)
         stackView.addArrangedSubview(redView)
         stackView.addArrangedSubview(blueView)
         stackView.addArrangedSubview(greenView)
