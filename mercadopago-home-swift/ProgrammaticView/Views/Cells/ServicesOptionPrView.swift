@@ -10,6 +10,7 @@ import UIKit
 class ServicesOptionPrView: UIView {
     private var icon: String
     private var title: String
+    private var color: UIColor
     
     private lazy var optionContainerView: UIView = {
         let view = UIView()
@@ -34,8 +35,9 @@ class ServicesOptionPrView: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        image.image = UIImage(systemName: self.icon)
-        image.tintColor = .black
+        let configuration = UIImage.SymbolConfiguration(weight: .light)
+        image.image = UIImage(systemName: self.icon)?.withConfiguration(configuration)
+        image.tintColor = self.color
         
         NSLayoutConstraint.activate([
             image.heightAnchor.constraint(equalToConstant: 30),
@@ -57,9 +59,10 @@ class ServicesOptionPrView: UIView {
         return label
     }()
     
-    required init(icon: String, title: String){
+    required init(icon: String, title: String, color: UIColor){
         self.icon = icon
         self.title = title
+        self.color = color
         super.init(frame: CGRect.zero)
         self.applyStyle()
     }

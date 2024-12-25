@@ -34,6 +34,8 @@ class TransferOptionPrView: UIView {
         image.contentMode = .scaleAspectFit
         image.image = UIImage(systemName: self.icon)
         image.tintColor = .black
+        let configuration = UIImage.SymbolConfiguration(weight: .light)
+        image.image = UIImage(systemName: self.icon)?.withConfiguration(configuration)
         
         NSLayoutConstraint.activate([
             image.heightAnchor.constraint(equalToConstant: 30),

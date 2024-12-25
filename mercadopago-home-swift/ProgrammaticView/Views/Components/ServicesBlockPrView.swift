@@ -10,6 +10,7 @@ import UIKit
 struct ServiceOption {
     let icon: String
     let title: String
+    let color: UIColor
 }
 
 class ServicesBlockPrView: UIView {
@@ -42,28 +43,28 @@ class ServicesBlockPrView: UIView {
     
     private func setupUpperOptionsView() {
         let upperOptions: [ServiceOption] = [
-            ServiceOption(icon: "arrow.up.circle", title: "Cuentas y\nservicios"),
-            ServiceOption(icon: "arrow.right.circle", title: "Recargar\ncelular"),
-            ServiceOption(icon: "arrow.down.circle", title: "Cargar\ntransporte"),
-            ServiceOption(icon: "person.text.rectangle", title: "Recargar\nDIRECTV")
+            ServiceOption(icon: "doc.plaintext", title: "Cuentas y\nservicios", color: .lightBlueButton),
+            ServiceOption(icon: "iphone.gen1.and.arrow.left", title: "Recargar\ncelular", color: .lightBlueButton),
+            ServiceOption(icon: "bus.fill", title: "Cargar\ntransporte", color: .lightBlueButton),
+            ServiceOption(icon: "antenna.radiowaves.left.and.right", title: "Recargar\nDIRECTV", color: .lightBlueButton)
         ]
         
         upperOptions.forEach { option in
-            let view = ServicesOptionPrView(icon: option.icon, title: option.title)
+            let view = ServicesOptionPrView(icon: option.icon, title: option.title, color: option.color)
             upperStackView.addArrangedSubview(view)
         }
     }
     
     private func setupBottomOptionsView() {
         let bottomOptions: [ServiceOption] = [
-            ServiceOption(icon: "arrow.up.circle", title: "Cobrar\ncon Point"),
-            ServiceOption(icon: "arrow.right.circle", title: "Cobrar con\nlink de pago"),
-            ServiceOption(icon: "arrow.down.circle", title: "Navidad"),
-            ServiceOption(icon: "person.text.rectangle", title: "Ver más")
+            ServiceOption(icon: "creditcard.and.123", title: "Cobrar\ncon Point", color: .opaquePurple),
+            ServiceOption(icon: "link", title: "Cobrar con\nlink de pago", color: .opaquePurple),
+            ServiceOption(icon: "gift", title: "Navidad", color: .opaquePurple),
+            ServiceOption(icon: "plus", title: "Ver más", color: .strongGray)
         ]
         
         bottomOptions.forEach { option in
-            let view = ServicesOptionPrView(icon: option.icon, title: option.title)
+            let view = ServicesOptionPrView(icon: option.icon, title: option.title, color: option.color)
             bottomStackView.addArrangedSubview(view)
         }
     }
