@@ -19,19 +19,9 @@ struct ContentView: View {
                     .frame(width: 250, height: 150)
                 
                 Button(action: {
-                    print("UIKit Storyboard")
-                }) {
-                    Text("UIKit Storyboard")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                
-                Button(action: {
                     navProgrammaticHome = true
                 }) {
-                    Text("UIKit Programmatically")
+                    Text("UIKit")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
