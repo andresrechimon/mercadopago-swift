@@ -96,6 +96,34 @@ class ProgrammaticHomeViewController: UIViewController {
     }()
     //OFFERS CAROUSEL
     
+    //HIGHLIGHTED FEATURES
+    private lazy var highlightedFeaturesStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 24
+        
+        return stack
+    }()
+    
+    private func setupHighlightedFeaturesView() {
+        let highlightedFeatures: [HighlightFeature] = [
+            HighlightFeature(icon: "hands.sparkles", title: "Créditos", subInfo: "Pedí hasta $ 978.982 con un Préstamo Personal."),
+            
+            HighlightFeature(icon: "dollarsign.ring.dashed", title: "Dólares", mainInfo: "US$ \(569.69.toCurrencyString())", subInfo: "Compra $ 1.173,58 - Venta $ 1.172,36"),
+            
+            HighlightFeature(icon: "dollarsign.bank.building", title: "Reservas", percentage: 30.9, subInfo: "Comenzá a guardar dinero y alcanzá tus objetivos."),
+            
+            HighlightFeature(icon: "shield", title: "Seguros y garantías", subInfo: "Descubrí tus seguros y garantías, transparentes y sin letras chicas."),
+        ]
+        
+        highlightedFeatures.forEach { feature in
+            let view = HighlightFeaturePrView(icon: feature.icon, title: feature.title, percentage: feature.percentage, mainInfo: feature.mainInfo, subInfo: feature.subInfo)
+            highlightedFeaturesStackView.addArrangedSubview(view)
+        }
+    }
+    //HIGHLIGHTED FEATURES
+    
     private lazy var redView: UIView = {
         let view = UIView()
         view.backgroundColor = .red
@@ -124,9 +152,10 @@ class ProgrammaticHomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .grayBackground
         
-        setupGradient()
-        setupView()
-        setupScrollContent()
+        self.setupGradient()
+        self.setupView()
+        self.setupScrollContent()
+        self.setupHighlightedFeaturesView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -171,6 +200,7 @@ class ProgrammaticHomeViewController: UIViewController {
         stackView.addArrangedSubview(transferBlockView)
         stackView.addArrangedSubview(servicesBlockView)
         stackView.addArrangedSubview(offersCarouselCollectionView)
+        stackView.addArrangedSubview(highlightedFeaturesStackView)
         stackView.addArrangedSubview(redView)
         stackView.addArrangedSubview(blueView)
         stackView.addArrangedSubview(greenView)

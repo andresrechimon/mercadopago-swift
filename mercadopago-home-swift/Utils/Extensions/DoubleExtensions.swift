@@ -18,4 +18,14 @@ extension Double {
         
         return formatter.string(from: NSNumber(value: self)) ?? "0,00"
     }
+    
+    func toPercentage() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
+        formatter.decimalSeparator = ","
+        
+        return (formatter.string(from: NSNumber(value: self)) ?? "0,0") + "%"
+    }
 }

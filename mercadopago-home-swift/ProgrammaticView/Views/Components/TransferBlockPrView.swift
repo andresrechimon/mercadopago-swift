@@ -32,53 +32,10 @@ class TransferBlockPrView: UIView {
     }()
     
     //REMUNERATION
-    private lazy var remunerationContainerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .backgroundNumberPlus
-        view.layer.cornerRadius = 8
-        
-        view.addSubview(remunerationContainerStackView)
-        
-        NSLayoutConstraint.activate([
-            remunerationContainerStackView.topAnchor.constraint(equalTo: view.topAnchor),
-            remunerationContainerStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            remunerationContainerStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
-            remunerationContainerStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4)
-        ])
+    private lazy var remunerationView: RemunerationPrView = {
+        let view = RemunerationPrView(icon: "▴", percentage: 32.4, bgColor: .backgroundNumberPlus, textColor: .numberPlus)
         
         return view
-    }()
-    
-    private lazy var remunerationContainerStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [remunerationSignLabel, remunerationPerLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.spacing = 2
-        
-        return stackView
-    }()
-    
-    private lazy var remunerationSignLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .backgroundNumberPlus
-        label.textColor = .numberPlus
-        label.font = .noyhBold(size: 8)
-        label.text = "▴"
-        
-        return label
-    }()
-    
-    private lazy var remunerationPerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .backgroundNumberPlus
-        label.textColor = .numberPlus
-        label.font = .noyhBold(size: 12)
-        label.text = "32,4%"
-        
-        return label
     }()
     //REMUNERATION
     
@@ -240,7 +197,7 @@ class TransferBlockPrView: UIView {
         self.applyContainerStyles()
         
         containerView.addSubview(availableLabel)
-        containerView.addSubview(remunerationContainerView)
+        containerView.addSubview(remunerationView)
         containerView.addSubview(movesButton)
         containerView.addSubview(moneyLabel)
         containerView.addSubview(eyeContainerView)
@@ -255,8 +212,8 @@ class TransferBlockPrView: UIView {
             availableLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             availableLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             
-            remunerationContainerView.leadingAnchor.constraint(equalTo: availableLabel.trailingAnchor, constant: 8),
-            remunerationContainerView.centerYAnchor.constraint(equalTo: availableLabel.centerYAnchor),
+            remunerationView.leadingAnchor.constraint(equalTo: availableLabel.trailingAnchor, constant: 8),
+            remunerationView.centerYAnchor.constraint(equalTo: availableLabel.centerYAnchor),
             
             movesButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
             movesButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
