@@ -75,7 +75,7 @@ class ServicesOptionPrView: UIView {
     private lazy var badgeContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .greenOffer
+        view.backgroundColor = .lightBlue
         view.layer.cornerRadius = 6
         view.clipsToBounds = true
         view.isHidden = self.serviceOffer.isEmpty

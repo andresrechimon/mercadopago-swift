@@ -67,7 +67,7 @@ class TransferBlockPrView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         let amount = 78325.61
-        let amountString = amount.toCurrencyString()
+        let amountString = amount.toCurrency()
         
         let components = amountString.components(separatedBy: ",")
         guard components.count == 2 else { return label }

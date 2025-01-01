@@ -108,13 +108,31 @@ class ProgrammaticHomeViewController: UIViewController {
     
     private func setupHighlightedFeaturesView() {
         let highlightedFeatures: [HighlightFeature] = [
-            HighlightFeature(icon: "hands.sparkles", title: "Créditos", subInfo: "Pedí hasta $ 978.982 con un Préstamo Personal."),
+            HighlightFeature(
+                icon: "hands.sparkles",
+                title: NSLocalizedString("credits_title", comment: ""),
+                subInfo: NSLocalizedString("credits_info", parameters: "$ \(978982.toCurrency())")
+            ),
             
-            HighlightFeature(icon: "dollarsign.ring.dashed", title: "Dólares", mainInfo: "US$ \(569.69.toCurrencyString())", subInfo: "Compra $ 1.173,58 - Venta $ 1.172,36"),
+            HighlightFeature(
+                icon: "dollarsign.ring.dashed",
+                title: NSLocalizedString("dollars_title", comment: ""),
+                mainInfo: "US$ \(569.69.toCurrency())",
+                subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())")
+            ),
             
-            HighlightFeature(icon: "dollarsign.bank.building", title: "Reservas", percentage: 30.9, subInfo: "Comenzá a guardar dinero y alcanzá tus objetivos."),
+            HighlightFeature(
+                icon: "dollarsign.bank.building",
+                title: NSLocalizedString("reserves_title", comment: ""),
+                percentage: 30.9,
+                subInfo: NSLocalizedString("reserves_info", comment: "")
+            ),
             
-            HighlightFeature(icon: "shield", title: "Seguros y garantías", subInfo: "Descubrí tus seguros y garantías, transparentes y sin letras chicas."),
+            HighlightFeature(
+                icon: "shield",
+                title: NSLocalizedString("insurance_title", comment: ""),
+                subInfo: NSLocalizedString("insurance_info", comment: "")
+            )
         ]
         
         highlightedFeatures.forEach { feature in

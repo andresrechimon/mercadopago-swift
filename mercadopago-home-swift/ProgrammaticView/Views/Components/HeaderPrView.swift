@@ -55,7 +55,7 @@ class HeaderPrView: UIView {
         label.textColor = .white
         label.numberOfLines = .zero
         label.font = .noyhRegular(size: 20)
-        label.text = NSLocalizedString("hello_home", text: self.getName())
+        label.text = NSLocalizedString("hello_home", parameters: self.getName())
         
         return label
     }()

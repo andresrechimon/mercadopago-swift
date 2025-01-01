@@ -44,10 +44,30 @@ class ServicesBlockPrView: UIView {
     
     private func setupUpperOptionsView() {
         let upperOptions: [ServiceOption] = [
-            ServiceOption(icon: "doc.plaintext", title: "Cuentas y\nservicios", color: .lightBlueButton, serviceOffer: ""),
-            ServiceOption(icon: "iphone.gen1.and.arrow.left", title: "Recargar\ncelular", color: .lightBlueButton, serviceOffer: ""),
-            ServiceOption(icon: "bus.fill", title: "Cargar\ntransporte", color: .lightBlueButton, serviceOffer: ""),
-            ServiceOption(icon: "antenna.radiowaves.left.and.right", title: "Recargar\nDIRECTV", color: .lightBlueButton, serviceOffer: "")
+            ServiceOption(
+                icon: "doc.plaintext",
+                title: NSLocalizedString("accounts_services_title", comment: ""),
+                color: .lightBlueButton,
+                serviceOffer: ""
+            ),
+            ServiceOption(
+                icon: "iphone.gen1.and.arrow.left",
+                title: NSLocalizedString("recharge_mobile_title", comment: ""),
+                color: .lightBlueButton,
+                serviceOffer: ""
+            ),
+            ServiceOption(
+                icon: "bus.fill",
+                title: NSLocalizedString("transport_title", comment: ""),
+                color: .lightBlueButton,
+                serviceOffer: ""
+            ),
+            ServiceOption(
+                icon: "antenna.radiowaves.left.and.right",
+                title: NSLocalizedString("directv_title", comment: ""),
+                color: .lightBlueButton,
+                serviceOffer: ""
+            )
         ]
         
         upperOptions.forEach { option in
@@ -55,13 +75,33 @@ class ServicesBlockPrView: UIView {
             upperStackView.addArrangedSubview(view)
         }
     }
-    
+
     private func setupBottomOptionsView() {
         let bottomOptions: [ServiceOption] = [
-            ServiceOption(icon: "creditcard.and.123", title: "Cobrar\ncon Point", color: .opaquePurple, serviceOffer: ""),
-            ServiceOption(icon: "link", title: "Cobrar con\nlink de pago", color: .opaquePurple, serviceOffer: ""),
-            ServiceOption(icon: "gift", title: "Navidad", color: .opaquePurple, serviceOffer: "Hasta 50% off"),
-            ServiceOption(icon: "plus", title: "Ver más", color: .strongGray, serviceOffer: "")
+            ServiceOption(
+                icon: "creditcard.and.123",
+                title: NSLocalizedString("point_title", comment: ""),
+                color: .opaquePurple,
+                serviceOffer: ""
+            ),
+            ServiceOption(
+                icon: "link",
+                title: NSLocalizedString("payment_link_title", comment: ""),
+                color: .opaquePurple,
+                serviceOffer: ""
+            ),
+            ServiceOption(
+                icon: "gift",
+                title: NSLocalizedString("recommend_app_title", comment: ""),
+                color: .goldenMp,
+                serviceOffer: NSLocalizedString("recommend_app_offer", comment: "")
+            ),
+            ServiceOption(
+                icon: "plus",
+                title: NSLocalizedString("see_more_title", comment: ""),
+                color: .strongGray,
+                serviceOffer: ""
+            )
         ]
         
         bottomOptions.forEach { option in

@@ -9,11 +9,11 @@ import Foundation
 
 import Foundation
 
-func NSLocalizedString(_ key: String, text parameter: CVarArg? = nil) -> String {
+func NSLocalizedString(_ key: String, parameters: CVarArg...) -> String {
     let localizedString = NSLocalizedString(key, comment: "")
     
-    if let parameter = parameter {
-        return String(format: localizedString, parameter)
+    if !parameters.isEmpty {
+        return String(format: localizedString, arguments: parameters)
     } else {
         return localizedString
     }

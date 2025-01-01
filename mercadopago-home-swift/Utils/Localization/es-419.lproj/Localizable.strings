@@ -14,3 +14,23 @@
 "withdraw" = "Sacar";
 "your_cvu" = "Tu CVU";
 "mp_card" = "Tarjeta Mercado Pago";
+// Highlighted Features
+"credits_title" = "Créditos";
+"credits_info" = "Pedí hasta %@ con un Préstamo Personal.";
+"dollars_title" = "Dólares";
+"dollars_info" = "Compra %@ - Venta %@";
+"reserves_title" = "Reservas";
+"reserves_info" = "Comenzá a guardar dinero y alcanzá tus objetivos.";
+"insurance_title" = "Seguros y garantías";
+"insurance_info" = "Descubrí tus seguros y garantías, transparentes y sin letras chicas.";
+// Upper Options
+"accounts_services_title" = "Cuentas y\nservicios";
+"recharge_mobile_title" = "Recargar\ncelular";
+"transport_title" = "Cargar\ntransporte";
+"directv_title" = "Recargar\nDIRECTV";
+// Bottom Options
+"point_title" = "Cobrar\ncon Point";
+"payment_link_title" = "Cobrar con\nlink de pago";
+"recommend_app_title" = "Recomendar\nla app";
+"recommend_app_offer" = "Conocé";
+"see_more_title" = "Ver más";
