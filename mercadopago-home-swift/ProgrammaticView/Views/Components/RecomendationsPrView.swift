@@ -29,8 +29,8 @@ class RecomendationsPrView: UIView {
     
     private func setupRecommendationsView() {
         let recommendations: [Recommendation] = [
-            Recommendation(icon: "gift", message: "¡Recomendá la app y ganá $ 12.000!"),
-            Recommendation(icon: "banknote", message: "¡Recomendá Point y ganá hasta $ 50.000!")
+            Recommendation(icon: "gift", message: NSLocalizedString("recommend_app_message", comment: "")),
+            Recommendation(icon: "banknote", message: NSLocalizedString("recommend_point_message", comment: ""))
         ]
         
         recommendations.forEach { recommendation in
