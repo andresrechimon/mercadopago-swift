@@ -1,5 +1,5 @@
 //
-//  OfferCarouselCollectionViewCell.swift
+//  OfferCarouselCollectionPrViewCell.swift
 //  mercadopago-home-swift
 //
 //  Created by Andres Rechimon on 25/12/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OfferCarouselCollectionViewCell: UICollectionViewCell {
+class OfferCarouselCollectionPrViewCell: UICollectionViewCell {
     
     private lazy var closeCircleView: UIView = {
         let view = UIView()

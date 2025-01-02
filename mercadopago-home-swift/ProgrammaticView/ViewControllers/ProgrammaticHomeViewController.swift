@@ -85,7 +85,7 @@ class ProgrammaticHomeViewController: UIViewController {
         collection.dataSource = self
         collection.delegate = self
         collection.showsHorizontalScrollIndicator = false
-        collection.register(OfferCarouselCollectionViewCell.self, forCellWithReuseIdentifier: "OfferCarouselCollectionViewCell")
+        collection.register(OfferCarouselCollectionPrViewCell.self, forCellWithReuseIdentifier: "OfferCarouselCollectionViewCell")
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -141,6 +141,12 @@ class ProgrammaticHomeViewController: UIViewController {
         }
     }
     //HIGHLIGHTED FEATURES
+    
+    private lazy var lastActivityView: LastActivityPrView = {
+        let view = LastActivityPrView()
+        
+        return view
+    }()
     
     private lazy var redView: UIView = {
         let view = UIView()
@@ -219,6 +225,7 @@ class ProgrammaticHomeViewController: UIViewController {
         stackView.addArrangedSubview(servicesBlockView)
         stackView.addArrangedSubview(offersCarouselCollectionView)
         stackView.addArrangedSubview(highlightedFeaturesStackView)
+        stackView.addArrangedSubview(lastActivityView)
         stackView.addArrangedSubview(redView)
         stackView.addArrangedSubview(blueView)
         stackView.addArrangedSubview(greenView)
@@ -245,7 +252,7 @@ extension ProgrammaticHomeViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: OfferCarouselCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OfferCarouselCollectionViewCell", for: indexPath) as? OfferCarouselCollectionViewCell else { fatalError() }
+        guard let cell: OfferCarouselCollectionPrViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OfferCarouselCollectionViewCell", for: indexPath) as? OfferCarouselCollectionPrViewCell else { fatalError() }
         
         cell.setup(item: viewModel.offers[indexPath.row])
         
