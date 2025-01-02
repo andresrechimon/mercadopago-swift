@@ -142,6 +142,12 @@ class ProgrammaticHomeViewController: UIViewController {
     }
     //HIGHLIGHTED FEATURES
     
+    private lazy var recommendationsView: RecomendationsPrView = {
+        let view = RecomendationsPrView()
+        
+        return view
+    }()
+    
     private lazy var lastActivityView: LastActivityPrView = {
         let view = LastActivityPrView()
         
@@ -225,6 +231,7 @@ class ProgrammaticHomeViewController: UIViewController {
         stackView.addArrangedSubview(servicesBlockView)
         stackView.addArrangedSubview(offersCarouselCollectionView)
         stackView.addArrangedSubview(highlightedFeaturesStackView)
+        stackView.addArrangedSubview(recommendationsView)
         stackView.addArrangedSubview(lastActivityView)
         stackView.addArrangedSubview(redView)
         stackView.addArrangedSubview(blueView)
