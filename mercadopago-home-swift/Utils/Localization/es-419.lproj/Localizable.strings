@@ -40,3 +40,11 @@
 // Recommendations
 "recommend_app_message" = "¡Recomendá la app y ganá $ 12.000!";
 "recommend_point_message" = "¡Recomendá Point y ganá hasta $ 50.000!";
+//Buttons
+"repentance_title" = "Botón de arrepentimiento";
+"cancel_account_title" = "Cancelar cuenta";
+//Footer texts
+"footer_last_login" = "Último ingreso: %@";
+"footer_disclaimer" = "Mercado Pago ofrece servicios de pago y no está autorizado por el Banco Central a operar como entidad financiera. Los fondos acreditados en cuentas de pago no constituyen depósitos en una entidad financiera ni están garantizados conforme legislación aplicable a depósitos en entidades financieras.";
+"footer_contract_law" = "Ir a contratos de adhesión - Ley N.º 24.240 de Defensa al Consumidor.";
+"footer_email" = "ayuda@mercadopago.com.ar";

@@ -154,27 +154,44 @@ class ProgrammaticHomeViewController: UIViewController {
         return view
     }()
     
-    private lazy var redView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    private lazy var repentanceButton: PrButton = {
+        let button = PrButton(icon: "receipt", title: NSLocalizedString("repentance_title"))
+        
+        return button
+    }()
+    
+    private lazy var cancelAccountButton: PrButton = {
+        let button = PrButton(icon: "person", title: NSLocalizedString("cancel_account_title"))
+        
+        return button
+    }()
+    
+    private lazy var separatorView: PrSeparatorView = {
+        let view = PrSeparatorView()
+        
         return view
     }()
     
-    private lazy var blueView: UIView = {
+    private lazy var separatorContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        view.addSubview(separatorView)
+        
+        NSLayoutConstraint.activate([
+            separatorView.topAnchor.constraint(equalTo: view.topAnchor),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            separatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         return view
     }()
     
-    private lazy var greenView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
+    private lazy var footerTextsView: FooterPrView = {
+        let view = FooterPrView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
         return view
     }()
     
@@ -233,9 +250,10 @@ class ProgrammaticHomeViewController: UIViewController {
         stackView.addArrangedSubview(highlightedFeaturesStackView)
         stackView.addArrangedSubview(recommendationsView)
         stackView.addArrangedSubview(lastActivityView)
-        stackView.addArrangedSubview(redView)
-        stackView.addArrangedSubview(blueView)
-        stackView.addArrangedSubview(greenView)
+        stackView.addArrangedSubview(repentanceButton)
+        stackView.addArrangedSubview(cancelAccountButton)
+        stackView.addArrangedSubview(separatorContainerView)
+        stackView.addArrangedSubview(footerTextsView)
     }
     
     private func setupGradient() {
