@@ -28,9 +28,11 @@ struct ContentView: View {
                         .cornerRadius(10)
                 }
                 
-                Button(action: {
-                    print("SwiftUI")
-                }) {
+                NavigationLink(destination: SUIHomeViewController()
+                    .navigationBarHidden(true)
+                    .edgesIgnoringSafeArea(.all)
+                    .statusBarHidden(true)
+                ) {
                     Text("SwiftUI")
                         .padding()
                         .background(Color.blue)
