@@ -25,7 +25,7 @@ class TransferBlockPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customMedium(size: 16)
+        label.font = .customMedium(size: 14)
         label.text = NSLocalizedString("available")
         
         return label
@@ -42,7 +42,7 @@ class TransferBlockPrView: UIView {
     private lazy var movesButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = .customMedium(size: 16)
+        button.titleLabel?.font = .customMedium(size: 14)
         button.setTitleColor(.lightBlueEmptyButton, for: .normal)
         button.setTitle(NSLocalizedString("go_to_moves"), for: .normal)
         
@@ -80,7 +80,7 @@ class TransferBlockPrView: UIView {
         let pesosSymbol = NSAttributedString(
             string: "$ ",
             attributes: [
-                .font: UIFont.customBold(size: 36),
+                .font: UIFont.customBold(size: 28),
                 .foregroundColor: UIColor.black
             ]
         )
@@ -89,7 +89,7 @@ class TransferBlockPrView: UIView {
         let wholeNumberString = NSAttributedString(
             string: wholeNumber,
             attributes: [
-                .font: UIFont.customBold(size: 36),
+                .font: UIFont.customBold(size: 28),
                 .foregroundColor: UIColor.black
             ]
         )
@@ -100,9 +100,9 @@ class TransferBlockPrView: UIView {
         let decimalsString = NSAttributedString(
             string: decimals,
             attributes: [
-                .font: UIFont.customRegular(size: 16),
+                .font: UIFont.customRegular(size: 12),
                 .foregroundColor: UIColor.black,
-                .baselineOffset: 13
+                .baselineOffset: 11
             ]
         )
         attributedString.append(decimalsString)

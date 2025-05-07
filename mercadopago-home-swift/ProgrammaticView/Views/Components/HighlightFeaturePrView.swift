@@ -56,7 +56,7 @@ class HighlightFeaturePrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customMedium(size: 22)
+        label.font = .customMedium(size: 18)
         label.text = self.title
         
         return label
@@ -88,7 +88,7 @@ class HighlightFeaturePrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customBold(size: 24)
+        label.font = .customBold(size: 20)
         label.numberOfLines = .zero
         label.text = self.mainInfo
         label.isHidden = self.mainInfo == nil
@@ -100,7 +100,7 @@ class HighlightFeaturePrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customRegular(size: 16)
+        label.font = .customRegular(size: 12)
         label.numberOfLines = .zero
         label.text = self.subInfo
         

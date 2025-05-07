@@ -48,7 +48,7 @@ class TransferOptionPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customRegular(size: 13)
+        label.font = .customRegular(size: 12)
         label.textAlignment = .center
         label.numberOfLines = .zero
         label.text = self.title

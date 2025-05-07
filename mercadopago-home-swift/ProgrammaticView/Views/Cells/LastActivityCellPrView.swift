@@ -77,7 +77,7 @@ class LastActivityCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customBold(size: 20)
+        label.font = .customMedium(size: 16)
         label.numberOfLines = .zero
         label.text = self.lastActivity.title
         
@@ -88,7 +88,7 @@ class LastActivityCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .grayInfo
-        label.font = .customRegular(size: 16)
+        label.font = .customRegular(size: 12)
         label.numberOfLines = .zero
         label.isHidden = self.lastActivity.disclaimer == nil
         label.text = self.lastActivity.disclaimer
@@ -143,7 +143,7 @@ class LastActivityCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .grayInfo
-        label.font = .customRegular(size: 16)
+        label.font = .customRegular(size: 12)
         label.numberOfLines = .zero
         label.text = self.lastActivity.paymentMethod
         
@@ -175,7 +175,7 @@ class LastActivityCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = self.lastActivity.type == .expense ? .black : .numberPlus
-        label.font = self.lastActivity.type == .expense ? .customRegular(size: 18) : .customMedium(size: 18)
+        label.font = self.lastActivity.type == .expense ? .customRegular(size: 14) : .customMedium(size: 14)
         label.numberOfLines = .zero
         label.textAlignment = .right
         label.text = "\(self.lastActivity.type == .expense ? "-" : "+") $ \(self.lastActivity.amount.toCurrency())"
@@ -187,7 +187,7 @@ class LastActivityCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .grayInfo
-        label.font = .customRegular(size: 16)
+        label.font = .customRegular(size: 12)
         label.numberOfLines = .zero
         label.textAlignment = .right
         label.text = self.lastActivity.date.toDateAbbrev()

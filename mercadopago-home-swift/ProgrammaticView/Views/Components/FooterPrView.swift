@@ -13,7 +13,7 @@ class FooterPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .grayInfo
-        label.font = .customRegular(size: 16)
+        label.font = .customRegular(size: 12)
         label.text = NSLocalizedString("footer_last_login", parameters: Date().toDateTimeString())
         
         return label
@@ -23,7 +23,7 @@ class FooterPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .grayInfo
-        label.font = .customRegular(size: 14)
+        label.font = .customRegular(size: 10)
         label.numberOfLines = .zero
         label.text = NSLocalizedString("footer_disclaimer")
         
@@ -34,7 +34,7 @@ class FooterPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightBlue
-        label.font = .customRegular(size: 14)
+        label.font = .customRegular(size: 10)
         label.numberOfLines = .zero
         label.text = NSLocalizedString("footer_contract_law")
         
@@ -45,7 +45,7 @@ class FooterPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightBlue
-        label.font = .customRegular(size: 18)
+        label.font = .customRegular(size: 14)
         label.numberOfLines = .zero
         label.text = NSLocalizedString("footer_email")
         

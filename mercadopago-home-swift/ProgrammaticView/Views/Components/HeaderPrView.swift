@@ -43,7 +43,7 @@ class HeaderPrView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.numberOfLines = .zero
-        label.font = .customRegular(size: 20)
+        label.font = .customRegular(size: 16)
         label.text = getInitials(for: self.username)
         
         return label
@@ -54,7 +54,7 @@ class HeaderPrView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.numberOfLines = .zero
-        label.font = .customRegular(size: 20)
+        label.font = .customMedium(size: 16)
         label.text = NSLocalizedString("hello_home", parameters: self.getName())
         
         return label
@@ -95,7 +95,7 @@ class HeaderPrView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "questionmark.circle"), for: .normal)
         button.tintColor = .white
-        button.titleLabel?.font = .customRegular(size: 16)
+        button.titleLabel?.font = .customMedium(size: 16)
         button.backgroundColor = .lightBlueButton
         button.layer.cornerRadius = 6
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)

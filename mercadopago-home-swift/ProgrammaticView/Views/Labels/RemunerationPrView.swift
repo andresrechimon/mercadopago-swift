@@ -38,7 +38,7 @@ class RemunerationPrView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .backgroundNumberPlus
         label.textColor = self.textColor
-        label.font = .customBold(size: 12)
+        label.font = .customBold(size: 10)
         label.text = self.percentage.toPercentage()
         
         return label

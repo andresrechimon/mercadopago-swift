@@ -64,7 +64,7 @@ class PrButton: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .customRegular(size: 20)
+        label.font = .customRegular(size: 16)
         label.text = self.title
         
         return label
