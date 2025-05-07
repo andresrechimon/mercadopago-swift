@@ -19,7 +19,7 @@ class LastActivityPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .noyhMedium(size: 22)
+        label.font = .customMedium(size: 22)
         label.text = NSLocalizedString("your_last_activity")
         
         return label
@@ -28,7 +28,7 @@ class LastActivityPrView: UIView {
     private lazy var seeAllButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = .noyhMedium(size: 18)
+        button.titleLabel?.font = .customMedium(size: 18)
         button.setTitleColor(.lightBlueEmptyButton, for: .normal)
         button.setTitle(NSLocalizedString("see_all"), for: .normal)
         

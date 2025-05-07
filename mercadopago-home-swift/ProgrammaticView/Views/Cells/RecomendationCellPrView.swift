@@ -52,7 +52,7 @@ class RecomendationCellPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = .zero
-        label.font = .noyhRegular(size: 16)
+        label.font = .customRegular(size: 16)
         label.textColor = .black
         label.text = self.recommendation.message
         

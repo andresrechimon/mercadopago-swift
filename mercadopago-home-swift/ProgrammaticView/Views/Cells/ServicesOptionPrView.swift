@@ -52,7 +52,7 @@ class ServicesOptionPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .noyhRegular(size: 13)
+        label.font = .customRegular(size: 13)
         label.textAlignment = .center
         label.numberOfLines = .zero
         label.text = self.title
@@ -64,7 +64,7 @@ class ServicesOptionPrView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
-        label.font = .noyhMedium(size: 10)
+        label.font = .customMedium(size: 10)
         label.textAlignment = .center
         label.numberOfLines = .zero
         label.text = self.serviceOffer.uppercased()

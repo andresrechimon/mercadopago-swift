@@ -4,9 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NoyhR-Medium.ttf</string>
-		<string>NoyhR-Bold.ttf</string>
-		<string>NoyhR-Regular.ttf</string>
+		<string>Figtree-Bold.ttf</string>
+		<string>Figtree-Light.ttf</string>
+		<string>Figtree-Medium.ttf</string>
+		<string>Figtree-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<array/>
