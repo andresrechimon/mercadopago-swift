@@ -33,11 +33,11 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                     .statusBarHidden(true)
                 ) {
-                    Text("SwiftUI")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    //Text("SwiftUI")
+                     //   .padding()
+                     //   .background(Color.blue)
+                     //   .foregroundColor(.white)
+                     //   .cornerRadius(10)
                 }
             }
             .padding()
