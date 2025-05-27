@@ -30,7 +30,6 @@ struct ContentView: View {
                 
                 NavigationLink(destination: SUIHomeViewController()
                     .navigationBarHidden(true)
-                    .edgesIgnoringSafeArea(.all)
                     .statusBarHidden(true)
                 ) {
                     Text("SwiftUI")

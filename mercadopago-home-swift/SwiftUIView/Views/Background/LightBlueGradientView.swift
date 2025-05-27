@@ -11,8 +11,8 @@ struct LightBlueGradientView: View {
     var body: some View {
         LinearGradient(
             gradient: Gradient(stops: [
-                .init(color: Color(uiColor: UIColor.lightBlue), location: 0.0),
-                .init(color: Color(uiColor: UIColor.lightBlue), location: 0.15),
+                .init(color: Color(uiColor: UIColor.yellowMp), location: 0.0),
+                .init(color: Color(uiColor: UIColor.yellowMp), location: 0.15),
                 .init(color: Color(uiColor: UIColor.grayBackground), location: 0.40)
             ]),
             startPoint: UnitPoint(x: 0.5, y: 0.0),

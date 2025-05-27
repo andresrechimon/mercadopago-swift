@@ -10,67 +10,63 @@ import SwiftUI
 struct HeaderUiView: View {
     var username: String
     var onTapCircle: () -> Void
-    
-    private var initials: String {
-        let components = username.split(separator: " ")
-        
-        return components.map { String($0.prefix(1)) }.joined()
-    }
 
     private var shortName: String {
         username.split(separator: " ").first.map(String.init) ?? ""
     }
-    
+
     var body: some View {
-            HStack {
-                Button(action: onTapCircle) {
-                    Text(initials)
-                        .font(.customRegular(size: 16))
-                        .foregroundColor(.black)
-                        .frame(width: 35, height: 35)
-                        .background(Color.circleContainerBackground)
-                        .clipShape(Circle())
-                }
-
-                HStack(spacing: 4) {
-                    Text(String(format: NSLocalizedString("hello_home", comment: ""), shortName))
-                        .font(.customMedium(size: 16))
-                        .foregroundColor(.white)
-
-                    Image(systemName: "chevron.right")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(.white)
-                }
-
-                Spacer()
-
-                Image(systemName: "bell")
+        HStack(spacing: 0) {
+            Button(action: onTapCircle) {
+                Image("mp-no-bg")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.white)
+                    .frame(width: 36, height: 36)
+            }
+            .padding(.leading, 16)
 
-                    HStack {
-                        Image(systemName: "questionmark.circle")
-                        Text(NSLocalizedString("help", comment: ""))
-                    }
+            HStack(spacing: 12) {
+                Text(String(format: NSLocalizedString("hello_home", comment: ""), shortName))
                     .font(.customMedium(size: 16))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Color.lightBlueButton)
-                    .cornerRadius(6)
-                }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .background(Color.lightBlue)
+                    .foregroundColor(.black)
+
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 9, height: 9)
+                    .foregroundColor(.black)
+            }
+            .padding(.leading, 8)
+
+            Spacer()
+
+            Image(systemName: "bell")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 22)
+                .foregroundColor(.black)
+                .padding(.trailing, 8)
+
+            HStack(spacing: 0) {
+                Image(systemName: "questionmark.circle")
+                Text(NSLocalizedString("help", comment: ""))
+            }
+            .font(.customMedium(size: 14))
+            .foregroundColor(.black)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .frame(height: 32)
+            .background(Color.lightYellowMp)
+            .cornerRadius(6)
+            .padding(.trailing, 16)
         }
+        .frame(height: 59)
+        .background(Color.yellowMp)
+    }
 }
 
 #Preview {
-    HeaderUiView(username: "Andrés Rechimon", onTapCircle: {
+    HeaderUiView(username: "Andrés Rechimon") {
         print("Circle tapped")
-    })
+    }
 }
