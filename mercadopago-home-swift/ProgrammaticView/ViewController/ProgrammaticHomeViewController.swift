@@ -110,28 +110,28 @@ class ProgrammaticHomeViewController: UIViewController {
         let highlightedFeatures: [HighlightFeature] = [
             HighlightFeature(
                 icon: "hands.sparkles",
-                title: NSLocalizedString("credits_title", comment: ""),
+                title: NSLocalizedString("credits_title"),
                 subInfo: NSLocalizedString("credits_info", parameters: "$ \(978982.toCurrency())")
             ),
             
             HighlightFeature(
                 icon: "dollarsign.ring.dashed",
-                title: NSLocalizedString("dollars_title", comment: ""),
+                title: NSLocalizedString("dollars_title"),
                 mainInfo: "US$ \(569.69.toCurrency())",
                 subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())")
             ),
             
             HighlightFeature(
                 icon: "dollarsign.bank.building",
-                title: NSLocalizedString("reserves_title", comment: ""),
+                title: NSLocalizedString("reserves_title"),
                 percentage: 30.9,
-                subInfo: NSLocalizedString("reserves_info", comment: "")
+                subInfo: NSLocalizedString("reserves_info")
             ),
             
             HighlightFeature(
                 icon: "shield",
-                title: NSLocalizedString("insurance_title", comment: ""),
-                subInfo: NSLocalizedString("insurance_info", comment: "")
+                title: NSLocalizedString("insurance_title"),
+                subInfo: NSLocalizedString("insurance_info")
             )
         ]
         

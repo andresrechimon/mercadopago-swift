@@ -26,7 +26,7 @@ struct HeaderUiView: View {
             .padding(.leading, 16)
 
             HStack(spacing: 12) {
-                Text(String(format: NSLocalizedString("hello_home", comment: ""), shortName))
+                Text(String(format: NSLocalizedString("hello_home"), shortName))
                     .font(.customMedium(size: 16))
                     .foregroundColor(.black)
 
@@ -49,7 +49,7 @@ struct HeaderUiView: View {
 
             HStack(spacing: 0) {
                 Image(systemName: "questionmark.circle")
-                Text(NSLocalizedString("help", comment: ""))
+                Text(NSLocalizedString("help"))
             }
             .font(.customMedium(size: 14))
             .foregroundColor(.black)

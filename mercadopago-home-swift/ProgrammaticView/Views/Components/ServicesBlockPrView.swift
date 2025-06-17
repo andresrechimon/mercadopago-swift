@@ -46,25 +46,25 @@ class ServicesBlockPrView: UIView {
         let upperOptions: [ServiceOption] = [
             ServiceOption(
                 icon: "doc.plaintext",
-                title: NSLocalizedString("accounts_services_title", comment: ""),
+                title: NSLocalizedString("accounts_services_title"),
                 color: .lightBlueButton,
                 serviceOffer: ""
             ),
             ServiceOption(
                 icon: "iphone.gen1.and.arrow.left",
-                title: NSLocalizedString("recharge_mobile_title", comment: ""),
+                title: NSLocalizedString("recharge_mobile_title"),
                 color: .lightBlueButton,
                 serviceOffer: ""
             ),
             ServiceOption(
                 icon: "bus.fill",
-                title: NSLocalizedString("transport_title", comment: ""),
+                title: NSLocalizedString("transport_title"),
                 color: .lightBlueButton,
                 serviceOffer: ""
             ),
             ServiceOption(
                 icon: "antenna.radiowaves.left.and.right",
-                title: NSLocalizedString("directv_title", comment: ""),
+                title: NSLocalizedString("directv_title"),
                 color: .lightBlueButton,
                 serviceOffer: ""
             )
@@ -80,25 +80,25 @@ class ServicesBlockPrView: UIView {
         let bottomOptions: [ServiceOption] = [
             ServiceOption(
                 icon: "creditcard.and.123",
-                title: NSLocalizedString("point_title", comment: ""),
+                title: NSLocalizedString("point_title"),
                 color: .opaquePurple,
                 serviceOffer: ""
             ),
             ServiceOption(
                 icon: "link",
-                title: NSLocalizedString("payment_link_title", comment: ""),
+                title: NSLocalizedString("payment_link_title"),
                 color: .opaquePurple,
                 serviceOffer: ""
             ),
             ServiceOption(
                 icon: "gift",
-                title: NSLocalizedString("recommend_app_title", comment: ""),
+                title: NSLocalizedString("recommend_app_title"),
                 color: .goldenMp,
-                serviceOffer: NSLocalizedString("recommend_app_offer", comment: "")
+                serviceOffer: NSLocalizedString("recommend_app_offer")
             ),
             ServiceOption(
                 icon: "plus",
-                title: NSLocalizedString("see_more_title", comment: ""),
+                title: NSLocalizedString("see_more_title"),
                 color: .strongGray,
                 serviceOffer: ""
             )
