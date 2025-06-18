@@ -20,7 +20,11 @@ struct SUIHomeViewController: View {
                         dismiss()
                     }
                 )
-                Spacer()
+                ScrollView {
+                    VStack(spacing: 24) {
+                        TransferBlockUiView()
+                    }
+                }
             }
         }
     }

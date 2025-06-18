@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func applyShadow() {
+    func containerStyle() {
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 4
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.1
         self.layer.shadowOffset = CGSize(width: 0, height: 2)

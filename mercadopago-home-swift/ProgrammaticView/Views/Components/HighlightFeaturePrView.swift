@@ -164,9 +164,7 @@ class HighlightFeaturePrView: UIView {
     }
     
     private func applyContainerStyles(){
-        containerView.backgroundColor = .white
-        containerView.layer.cornerRadius = 4
-        containerView.applyShadow()
+        containerView.containerStyle()
         
         self.addSubview(containerView)
         
