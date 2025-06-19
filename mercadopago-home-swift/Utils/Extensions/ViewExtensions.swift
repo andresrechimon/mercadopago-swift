@@ -11,7 +11,7 @@ extension View {
     func containerStyle() -> some View {
         self
             .frame(maxWidth: .infinity)
-            .background(Color.white)
+            .background(.white)
             .cornerRadius(4)
             .padding(.horizontal, 16)
             .shadow(

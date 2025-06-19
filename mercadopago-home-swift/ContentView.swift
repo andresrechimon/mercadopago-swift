@@ -23,7 +23,7 @@ struct ContentView: View {
                 }) {
                     Text("UIKit")
                         .padding()
-                        .background(Color.blue)
+                        .background(.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
@@ -34,7 +34,7 @@ struct ContentView: View {
                 ) {
                     Text("SwiftUI")
                         .padding()
-                        .background(Color.blue)
+                        .background(.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }

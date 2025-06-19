@@ -23,6 +23,10 @@ struct TransferBlockUiView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 4)
+            
+            TransferOptionView()
+            
+            CreditCardView()
         }
         .padding(.top, 12)
         .padding([.horizontal, .bottom], 16)
@@ -92,17 +96,70 @@ struct EyeContainerView: View {
     private let circleUnits: CGFloat = 30
     
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.grayBackground)
-                .frame(width: circleUnits, height: circleUnits)
-            Image(systemName: "eye")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-                .foregroundColor(.black)
-        }
+        Image(systemName: "eye")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20)
+            .foregroundColor(.black)
     }
+}
+
+struct TransferOptionView: View {
+    var body: some View {
+        HStack {
+            TransferOptionUiView(icon: "arrow.up.circle", title: NSLocalizedString("deposit"))
+            Spacer()
+            TransferOptionUiView(icon: "arrow.right.circle", title: NSLocalizedString("transfer"))
+            Spacer()
+            TransferOptionUiView(icon: "arrow.down.circle", title: NSLocalizedString("withdraw"))
+            Spacer()
+            TransferOptionUiView(icon: "person.text.rectangle", title: NSLocalizedString("your_cvu"))
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 12)
+    }
+}
+
+struct CreditCardView: View {
+    var body: some View {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 8) {
+                    Image("mastercard-logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                    
+                    Image("mercado-pago-empty-logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                }
+                .padding(.top, 8)
+                .padding(.leading, 8)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                Spacer()
+
+                HStack {
+                    Text(NSLocalizedString("mp_card_ui"))
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.white)
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 8, height: 8)
+                        .foregroundColor(.white)
+                }
+                .padding([.leading, .trailing, .bottom], 8)
+            }
+            .frame(height: 85)
+            .background(.blackCardBackground)
+            .cornerRadius(4)
+            .padding(.top, 16)
+        }
 }
 
 #Preview {

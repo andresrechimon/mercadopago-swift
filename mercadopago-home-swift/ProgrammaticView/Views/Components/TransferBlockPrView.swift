@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct TransferOption {
-    let icon: String
-    let title: String
-}
-
 class TransferBlockPrView: UIView {
     
     private lazy var containerView: UIView = {

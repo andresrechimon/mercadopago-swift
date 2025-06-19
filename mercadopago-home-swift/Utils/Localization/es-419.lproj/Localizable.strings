@@ -14,6 +14,7 @@
 "withdraw" = "Sacar";
 "your_cvu" = "Tu CVU";
 "mp_card" = "Tarjeta Mercado Pago";
+"mp_card_ui" = "Tarjeta Prepaga";
 // Highlighted Features
 "credits_title" = "Créditos";
 "credits_info" = "Pedí hasta %@ con un Préstamo Personal.";

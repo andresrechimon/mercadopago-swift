@@ -56,12 +56,12 @@ struct HeaderUiView: View {
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .frame(height: 32)
-            .background(Color.lightYellowMp)
+            .background(.lightYellowMp)
             .cornerRadius(6)
             .padding(.trailing, 16)
         }
         .frame(height: 59)
-        .background(Color.yellowMp)
+        .background(.yellowMp)
     }
 }
 
