@@ -24,7 +24,7 @@ struct ServicesOptionUiView: View {
                             .stroke(.grayBackground, lineWidth: 1.5)
                     )
 
-                Image(systemName: self.icon)
+                ImageView()
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: self.getSize(), height: self.getSize())
@@ -47,6 +47,14 @@ struct ServicesOptionUiView: View {
                 .font(.customLight(size: 12))
                 .multilineTextAlignment(.center)
         }
+    }
+    
+    private func ImageView() -> Image {
+        if self.withOffer {
+            return Image("vea-logo")
+        }
+        
+        return Image(systemName: self.icon)
     }
     
     private func getSize() -> CGFloat {
