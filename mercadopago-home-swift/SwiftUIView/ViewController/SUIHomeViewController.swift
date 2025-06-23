@@ -38,6 +38,7 @@ struct SUIHomeViewController: View {
                             .padding(.horizontal, 16)
                         }
 
+                        HighlightFeatureUiView(icon: "hands.sparkles", title: NSLocalizedString("credits_title"), subInfo: NSLocalizedString("credits_info", parameters: "$ \(2103473.toCurrency())"))
                     }
                 }
             }
