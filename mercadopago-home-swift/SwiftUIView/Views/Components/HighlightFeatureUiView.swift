@@ -10,12 +10,11 @@ import SwiftUI
 struct HighlightFeatureUiView: View {
     var icon: String
     var title: String
-    var mainInfo: String?
     var subInfo: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack{
+            HStack {
                 HStack(spacing: 8) {
                     Image(systemName: self.icon)
                         .frame(width: 20, height: 20)
@@ -29,10 +28,9 @@ struct HighlightFeatureUiView: View {
                     .foregroundColor(.lightBlueEmptyButton)
             }
             
-            if let mainInfo = self.mainInfo {
-                Text(mainInfo)
+            if title == NSLocalizedString("dollars_title") {
+                formattedAmount(569.69)
                     .foregroundColor(.black)
-                    .font(.customBold(size: 24))
             }
             
             Text(self.subInfo)
@@ -42,8 +40,34 @@ struct HighlightFeatureUiView: View {
         .padding(16)
         .containerStyle()
     }
+    
+    @ViewBuilder
+    private func formattedAmount(_ amount: Double) -> some View {
+        let amountString = amount.toCurrency()
+        let components = amountString.components(separatedBy: ",")
+        
+        if components.count == 2 {
+            let wholeNumber = components[0]
+            let decimals = components[1]
+            
+            (Text("US$ \(wholeNumber)")
+                .font(.customBold(size: 24))
+             +
+             Text(" \(decimals)")
+                .font(.customRegular(size: 12))
+                .baselineOffset(8)
+            )
+        } else {
+            Text(amountString)
+                .font(.customBold(size: 24))
+        }
+    }
 }
 
 #Preview {
-    HighlightFeatureUiView(icon: "dollarsign.ring.dashed", title: NSLocalizedString("dollars_title"), subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())"))
+    HighlightFeatureUiView(
+        icon: "dollarsign.ring.dashed",
+        title: NSLocalizedString("dollars_title"),
+        subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())")
+    )
 }
