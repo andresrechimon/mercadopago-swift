@@ -43,6 +43,8 @@ struct SUIHomeViewController: View {
                         HighlightFeatureUiView(icon: "dollarsign.bank.building", title: NSLocalizedString("reserves_title"), value: CurrencyAmount(currency: .peso, amount: 0.50, percentage: 26.4))
                         
                         HighlightFeatureUiView(icon: "shield", title: NSLocalizedString("insurance_title"), subInfo: NSLocalizedString("insurance_info_new"), isNew: true)
+                        
+                        PromoBannerUiView(image: "banner-meli+")
                     }
                 }
             }
