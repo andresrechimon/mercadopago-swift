@@ -25,13 +25,13 @@ struct SUIHomeViewController: View {
                     VStack(spacing: 24) {
                         TransferBlockUiView()
                         
-                        HighlightFeatureUiView(icon: "dollarsign.ring.dashed", title: NSLocalizedString("dollars_title"), subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())"))
+                        HighlightFeatureUiView(icon: "dollarsign.ring.dashed", title: NSLocalizedString("dollars_title"), value: CurrencyAmount(currency: .dollar, amount: 569.69, percentage: 2.6), subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())"))
                         
                         ServicesBlockUiView()
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
-                                ForEach(self.viewModel.offers, id: \.self) { offer in
+                                ForEach(self.viewModel.offers) { offer in
                                     OfferCarouselUiViewCell(offer: offer)
                                 }
                             }
@@ -39,6 +39,10 @@ struct SUIHomeViewController: View {
                         }
 
                         HighlightFeatureUiView(icon: "hands.sparkles", title: NSLocalizedString("credits_title"), subInfo: NSLocalizedString("credits_info", parameters: "$ \(2103473.toCurrency())"))
+                        
+                        HighlightFeatureUiView(icon: "dollarsign.bank.building", title: NSLocalizedString("reserves_title"), value: CurrencyAmount(currency: .peso, amount: 0.50, percentage: 26.4))
+                        
+                        HighlightFeatureUiView(icon: "shield", title: NSLocalizedString("insurance_title"), subInfo: NSLocalizedString("insurance_info_new"), isNew: true)
                     }
                 }
             }

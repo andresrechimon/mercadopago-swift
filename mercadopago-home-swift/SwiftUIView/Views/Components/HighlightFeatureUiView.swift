@@ -10,7 +10,9 @@ import SwiftUI
 struct HighlightFeatureUiView: View {
     var icon: String
     var title: String
-    var subInfo: String
+    var value: CurrencyAmount?
+    var subInfo: String?
+    var isNew: Bool?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -21,6 +23,10 @@ struct HighlightFeatureUiView: View {
                     Text(self.title)
                         .foregroundColor(.black)
                         .font(.customMedium(size: 18))
+                    
+                    if let _ = self.isNew {
+                        BadgeUiView(title: NSLocalizedString("new"), color: .royalBlue)
+                    }
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
@@ -28,29 +34,35 @@ struct HighlightFeatureUiView: View {
                     .foregroundColor(.lightBlueEmptyButton)
             }
             
-            if title == NSLocalizedString("dollars_title") {
-                formattedAmount(569.69)
-                    .foregroundColor(.black)
+            if let value = self.value {
+                HStack {
+                    formattedAmount(value)
+                        .foregroundColor(.black)
+                    
+                    RemunerationUiView(icon: "▴", percentage: value.percentage, bgColor: .backgroundNumberPlus, textColor: .numberPlus)
+                }
             }
             
-            Text(self.subInfo)
-                .foregroundColor(.black)
-                .font(.customRegular(size: 12))
+            if let subInfo = self.subInfo {
+                Text(subInfo)
+                    .foregroundColor(.black)
+                    .font(.customRegular(size: 12))
+            }
         }
         .padding(16)
         .containerStyle()
     }
     
     @ViewBuilder
-    private func formattedAmount(_ amount: Double) -> some View {
-        let amountString = amount.toCurrency()
+    private func formattedAmount(_ value: CurrencyAmount) -> some View {
+        let amountString = value.amount.toCurrency()
         let components = amountString.components(separatedBy: ",")
         
         if components.count == 2 {
             let wholeNumber = components[0]
             let decimals = components[1]
             
-            (Text("US$ \(wholeNumber)")
+            (Text("\(value.currency.rawValue) \(wholeNumber)")
                 .font(.customBold(size: 24))
              +
              Text(" \(decimals)")

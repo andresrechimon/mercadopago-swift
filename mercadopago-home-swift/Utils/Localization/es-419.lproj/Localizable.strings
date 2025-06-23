@@ -23,7 +23,8 @@
 "reserves_title" = "Reservas";
 "reserves_info" = "Comenzá a guardar dinero y alcanzá tus objetivos.";
 "insurance_title" = "Seguros y garantías";
-"insurance_info" = "Descubrí tus seguros y garantías, transparentes y sin letras chicas.";
+"insurance_info_new" = "Protegé tus transacciones por $ 1.469 mensual.";
+"insurance_info_old" = "Descubrí tus seguros y garantías, transparentes y sin letras chicas.";
 // Upper Options
 "accounts_services_title" = "Cuentas y\nservicios";
 "recharge_mobile_title" = "Recargar\ncelular";
@@ -34,7 +35,8 @@
 "payment_link_title" = "Cobrar con\nlink de pago";
 "recommend_app_title" = "Recomendar\nla app";
 "no_cap" = "SIN TOPE";
-"no_cap_offer" = "20% OFF";
+"no_cap_offer" = "20% off";
+"new" = "Nuevo";
 "recommend_app_offer" = "Conocé";
 "see_more_title" = "Ver más";
 // Last Activity

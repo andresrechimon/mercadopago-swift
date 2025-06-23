@@ -131,7 +131,7 @@ class ProgrammaticHomeViewController: UIViewController {
             HighlightFeature(
                 icon: "shield",
                 title: NSLocalizedString("insurance_title"),
-                subInfo: NSLocalizedString("insurance_info")
+                subInfo: NSLocalizedString("insurance_info_old")
             )
         ]
         

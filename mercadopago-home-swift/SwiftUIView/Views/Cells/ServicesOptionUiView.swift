@@ -32,12 +32,7 @@ struct ServicesOptionUiView: View {
                     .font(.system(size: self.getSize(), weight: .light))
                 
                 if self.withOffer {
-                    Text(NSLocalizedString("no_cap_offer"))
-                        .font(.customBold(size: 10))
-                        .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
-                        .background(Color.emeraldGreen)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    BadgeUiView(title: NSLocalizedString("no_cap_offer"), color: .emeraldGreen)
                         .offset(y: 28)
                 }
             }

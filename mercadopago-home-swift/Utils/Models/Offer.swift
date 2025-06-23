@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Offer: Hashable {
+struct Offer: Identifiable, Hashable {
+    let id = UUID()
     let banner: String
 }
