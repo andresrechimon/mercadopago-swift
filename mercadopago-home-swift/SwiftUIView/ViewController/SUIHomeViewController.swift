@@ -23,6 +23,10 @@ struct SUIHomeViewController: View {
                 ScrollView {
                     VStack(spacing: 24) {
                         TransferBlockUiView()
+                        
+                        HighlightFeatureUiView(icon: "dollarsign.ring.dashed", title: NSLocalizedString("dollars_title"), mainInfo: "US$ \(569.69.toCurrency())", subInfo: NSLocalizedString("dollars_info", parameters: "$ \(1173.58.toCurrency())", "$ \(1172.36.toCurrency())"))
+                        
+                        ServicesBlockUiView()
                     }
                 }
             }
