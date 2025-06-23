@@ -24,7 +24,7 @@ struct ServicesBlockUiView: View {
                 Spacer()
                 ServicesOptionUiView(icon: "link", title: NSLocalizedString("payment_link_title"), color: .deepIndigo)
                 Spacer()
-                ServicesOptionUiView(icon: "gift", title: NSLocalizedString("recommend_app_title"), color: .deepIndigo)
+                ServicesOptionUiView(icon: "gift", title: NSLocalizedString("no_cap"), color: .deepIndigo, withOffer: true)
                 Spacer()
                 ServicesOptionUiView(icon: "plus", title: NSLocalizedString("see_more_title"), color: .strongGray)
             }

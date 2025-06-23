@@ -33,6 +33,8 @@
 "point_title" = "Cobrar\ncon Point";
 "payment_link_title" = "Cobrar con\nlink de pago";
 "recommend_app_title" = "Recomendar\nla app";
+"no_cap" = "SIN TOPE";
+"no_cap_offer" = "20% OFF";
 "recommend_app_offer" = "Conocé";
 "see_more_title" = "Ver más";
 // Last Activity
