@@ -31,11 +31,6 @@ struct LastActivity {
     }
 }
 
-enum TypeBalance {
-    case income
-    case expense
-}
-
 class LastActivityCellPrView: UIView {
     private var lastActivity: LastActivity
     

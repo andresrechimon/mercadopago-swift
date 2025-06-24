@@ -20,9 +20,9 @@ struct LastActivityUiView: View {
             }
             
             VStack {
-                LastActivityCellUiView()
-                LastActivityCellUiView()
-                LastActivityCellUiView()
+                LastActivityCellUiView(icon: "arrow.right.circle", title: "Roberto Malis", disclaimer: "Transferencia enviada", paymentMethod: "Dinero disponible", paymentMethodIcon: Image("mercado-pago-logo"), type: .expense, amount: 15000, date: Date())
+                LastActivityCellUiView(icon: "arrow.right.circle", title: "Bruno Braconi", disclaimer: "Transferencia recibida", type: .income, amount: 15000, date: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date())
+                LastActivityCellUiView(icon: "bag", title: "Vez Sm 432", disclaimer: "Pago en tienda física", paymentMethod: "Mastercard Mercado Pago", paymentMethodIcon: Image("mercado-pago-empty-logo"), paymentMethodIconBg: .black, type: .expense, amount: 112003.55, date: Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date())
             }
         }
         .padding(16)
