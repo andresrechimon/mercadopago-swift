@@ -23,13 +23,30 @@ struct LastActivityCellUiView: View {
             }
             
             VStack(alignment: .leading, spacing: 0) {
-                Text("Roberto Malis")
-                    .foregroundColor(.black)
-                    .font(.customMedium(size: 16))
+                HStack {
+                    Text("Roberto Malis")
+                        .foregroundColor(.black)
+                        .font(.customMedium(size: 16))
+                    
+                    Spacer()
+                    
+                    Text("- $ 6.300,50")
+                        .foregroundColor(.black)
+                        .font(.customRegular(size: 14))
+                }
                 
-                Text("Transferencia enviada")
-                    .foregroundColor(.grayInfo)
-                    .font(.customRegular(size: 12))
+                HStack {
+                    Text("Transferencia enviada")
+                        .foregroundColor(.grayInfo)
+                        .font(.customRegular(size: 12))
+                    
+                    Spacer()
+                    
+                    Text("24/jun")
+                        .foregroundColor(.grayInfo)
+                        .font(.customRegular(size: 12))
+                }
+                
                 HStack(spacing: 4) {
                     ZStack {
                         Circle()
@@ -48,8 +65,6 @@ struct LastActivityCellUiView: View {
                         .font(.customRegular(size: 12))
                 }
             }
-            
-            Spacer()
         }
         .padding(.top, 8)
         .padding(.bottom, 16)
