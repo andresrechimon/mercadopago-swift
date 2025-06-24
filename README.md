@@ -1,4 +1,4 @@
-SwiftUI(Updated):
+SwiftUI:
 
 https://github.com/user-attachments/assets/37e5119e-6787-4b26-a989-a72b2c19a2e2
 
