@@ -45,6 +45,8 @@ struct SUIHomeViewController: View {
                         HighlightFeatureUiView(icon: "shield", title: NSLocalizedString("insurance_title"), subInfo: NSLocalizedString("insurance_info_new"), isNew: true)
                         
                         PromoBannerUiView(image: "banner-meli+")
+                        
+                        LastActivityUiView()
                     }
                 }
             }
