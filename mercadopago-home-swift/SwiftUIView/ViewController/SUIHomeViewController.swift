@@ -47,6 +47,10 @@ struct SUIHomeViewController: View {
                         PromoBannerUiView(image: "banner-meli+")
                         
                         LastActivityUiView()
+                        
+                        UiButton(icon: "receipt", title: NSLocalizedString("repentance_title"))
+                        UiButton(icon: "person", title: NSLocalizedString("cancel_account_title"))
+                        UiButton(icon: "text.bubble.rtl", title: NSLocalizedString("experience_home_title"))
                     }
                 }
             }

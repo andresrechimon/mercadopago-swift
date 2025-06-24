@@ -48,6 +48,7 @@
 //Buttons
 "repentance_title" = "Botón de arrepentimiento";
 "cancel_account_title" = "Cancelar cuenta";
+"experience_home_title" = "¿Cómo fue tu experiencia en la pantalla de inicio?";
 //Footer texts
 "footer_last_login" = "Último ingreso: %@";
 "footer_disclaimer" = "Mercado Pago ofrece servicios de pago y no está autorizado por el Banco Central a operar como entidad financiera. Los fondos acreditados en cuentas de pago no constituyen depósitos en una entidad financiera ni están garantizados conforme legislación aplicable a depósitos en entidades financieras.";
