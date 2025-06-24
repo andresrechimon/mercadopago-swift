@@ -53,6 +53,8 @@ struct SUIHomeViewController: View {
                         UiButton(icon: "text.bubble.rtl", title: NSLocalizedString("experience_home_title"))
                         
                         UiSeparatorView()
+                        
+                        FooterUiView()
                     }
                 }
             }
