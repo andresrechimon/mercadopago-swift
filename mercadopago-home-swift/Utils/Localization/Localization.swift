@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 func NSLocalizedString(_ key: String, parameters: CVarArg...) -> String {
     let localizedString = NSLocalizedString(key, comment: "")
     
